@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <mate charset="UTF-8">
+        <style>
+            table.edui-default {
+                margin-bottom: 0;
+                border: none;
+            }
+        </style>
+</head>
+<body ng-app="UeditorApp" ng-controllor="CTRL">
+    <div class="row" ng-controller="CTRL">
+        <div class="columns small-12">
+            <h1>angular-ueditor 例子</h1>
+            <div class="panel">
+                <div class="ueditor" ng-model="content1" config="config"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/v2/lib/jquery/jquery-1.11.3.min.js"></script>
+<script src="/v2/lib/bs/js/bootstrap.min.js"></script>
+<script src="/v2/lib/angular/angular1.5.5.js"></script>
+<script src="/v2/lib/ueditor/ueditor.config.js"></script>
+<script src="/v2/lib/ueditor/ueditor.all.js"></script>
+
+
+<script src="/v2/lib/ueditor/angular-ueditor.js"></script>
+<script type="text/javascript">
+    angular.module('UeditorApp', ["ng.ueditor"]).controller("CTRL", function ($scope) {
+        $scope.config = {
+            initImgWidth:600 // 图片的初始宽度
+        };
+    });
+</script>
+
+</html>

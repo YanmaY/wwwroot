@@ -1,0 +1,149 @@
+<div class="mainmenu {{$parent.fullmenu}}" toogle-menu ng-init="$parent.fullmenu='fullmenu'">
+    <dl class="home">
+        <dt onclick="window.location.href = '/v2/index.html';" title="点击转到首页">
+            <i class="icon ion-reply-all"></i>
+            <strong>首　　页</strong>
+        </dt>
+    </dl>
+    <dl popedom="232" ng-click="submenu='infoManage'" ng-class="{true: 'active', false: ''}[submenu=='infoManage']">
+        <dt>
+            <i class="icon ion-clipboard"></i>
+            <strong>信息管理</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li><a href="/v2/infoManage/html/index.html#/organization">组织信息</a></li>
+                <li><a href="/v2/infoManage/html/index.html#/member">人员信息</a></li>
+                <li><a href="/v2/infoManage/html/index.html#/company">单位信息</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="210" ng-click="submenu='affair'" ng-class="{true: 'active', false: ''}[submenu=='affair']">
+        <dt>
+            <i class="icon ion-compose"></i>
+            <strong>党务办理</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li popedom="1EF"><a href="/v2/affair/html/index.html#/relationship">组织关系</a></li>
+                <li popedom="1F5"><a href="/v2/affair/html/index.html#/develop">发展党员</a></li>
+                <li popedom="1F0"><a href="/v2/affair/html/index.html#/add">党员补录</a></li>
+                <li popedom="1F1"><a href="/v2/affair/html/index.html#/del">党员补删</a></li>
+                <li popedom="215"><a href="/v2/affair/html/index.html#/partyDuesList">党费管理</a></li>
+                <li popedom="368"><a href="/v2/affair/html/index.html#/partyMemberChanges">党员异动</a></li>
+                <li popedom="1E8"><a href="/v2/affair/html/index.html#/pmErrorCorrection">党员纠错</a></li>
+                <li popedom="369"><a href="/v2/affair/html/index.html#/flowoutPartyMemberList">流动党员</a></li>
+                <li popedom="4A6"><a href="/v2/luanchuan/html/index.html#/luanchuanWeChatSecretaryWeekSign">第一书记</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="211" ng-click="submenu='report'" ng-class="{true: 'active', false: ''}[submenu=='report']">
+        <dt>
+            <i class="icon ion-paper-airplane"></i>
+            <strong>决策分析</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li popedom="203"><a href="/v2/report/html/index.html#/statistics">直 接 统 计</a></li>
+                <li popedom="200"><a href="/v2/report/html/index.html#/summary">报 表 汇 总</a></li>
+                <li popedom="374"><a href="/v2/report/html/index.html#/task">任 务 进 度</a></li>
+                <li popedom="204"><a href="/v2/report/html/index.html#/dataprocess">数 据 质 量</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="234" ng-click="submenu='activity'" ng-class="{true: 'active', false: ''}[submenu=='activity']">
+        <dt>
+            <i class="icon ion-flag"></i>
+            <strong>服务活动</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li popedom="1EE"><a href="/v2/activity/html/index.html#/baseActivity">基层活动</a></li>
+                <li popedom="1ED"><a href="/v2/activity/html/index.html#/publicActivityList">稿件发布</a></li>
+                <li popedom="43E"><a href="/v2/activity/html/index.html#/wishManagement">结对服务</a></li>
+                <li popedom="478"><a href="/v2/activity/html/index.html#/highlightsEngineering">亮点工程</a></li>
+                <li popedom="478"><a href="/v2/activity/html/index.html#/highlightsEngineeringBallot">投票详情</a></li>
+                <li popedom="497"><a href="/v2/activity/html/index.html#/partyBuildingActivity">三会一课</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="213" ng-click="submenu='study'" ng-class="{true: 'active', false: ''}[submenu=='study']">
+        <dt>
+            <i class="icon ion-easel"></i>
+            <strong>教育学习</strong>
+        </dt>
+        <dd>
+            <ul>
+                <!--<li popedom="20D"><a href="/v2/study/html/index.html#/coursewareCenter">资料中心</a></li>-->
+                <li popedom="20D"><a href="/v2/study/html/index.html#/originalVideo">原创视频</a></li>
+                <li popedom="20D"><a href="/v2/study/html/index.html#/sharedManuscript">共享文稿</a></li>
+                <li popedom="20D"><a href="/v2/study/html/index.html#/sharedDocument">共享文档</a></li>
+                <li popedom="4A1"><a href="/v2/study/html/index.html#/partyEncyclopedia">党建百科</a></li>
+             
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="236" ng-click="submenu='assessment'" ng-class="{true: 'active', false: ''}[submenu=='assessment']">
+        <dt>
+            <i class="icon ion-ribbon-b"></i>
+            <strong>积分考核</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li popedom="3AB"><a href="/v2/assessment/html/index.html#/activityStatistical">活动排名</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="237" ng-click="submenu='sms'" ng-class="{true: 'active', false: ''}[submenu=='sms']">
+        <dt>
+            <i class="icon ion-easel"></i>
+            <strong>短信服务</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li><a href="/v2/sms/html/index.html#/massSms">群发短信</a></li>
+                <!--<li><a href="/v2/sms/html/index.html#/autoSms">政治生日</a></li>
+                <li><a href="/v2/sms/html/index.html#/thinkingReportRemind">思想汇报提醒</a></li>
+                <li><a href="/v2/sms/html/index.html#/threeLessons">三会一课</a></li>-->
+                <li popedom-arbitrary="483,486,4A5"><a href="/v2/sms/html/index.html#/autoSmsTemplate">短信模版</a></li>
+                <li><a href="/v2/sms/html/index.html#/smsList">短信列表</a></li>
+                <li><a href="/v2/sms/html/index.html#/groupSet">群组设置</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="46F" ng-click="submenu='luanchuan'" ng-class="{true: 'active', false: ''}[submenu=='luanchuan']">
+        <dt>
+            <i class="icon ion-easel"></i>
+            <strong>微信留言</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li><a href="/v2/luanchuan/html/index.html#/luanchuanWeChatHelp">帮助列表</a></li>
+                <li><a href="/v2/luanchuan/html/index.html#/luanchuanWeChatAppeal">求助列表</a></li>
+                <li><a href="/v2/luanchuan/html/index.html#/luanchuanWeChatSuggest">建议列表</a></li>
+            </ul>
+        </dd>
+    </dl>
+    <dl popedom="238" ng-click="submenu='tools'" ng-class="{true: 'active', false: ''}[submenu=='tools']">
+        <dt>
+            <i class="icon ion-search"></i>
+            <strong>常用工具</strong>
+        </dt>
+        <dd>
+            <ul>
+                <li popedom="3AD"><a href="/v2/tools/html/index.html#/inquire">数据查询</a></li>
+                <li popedom="3AE"><a href="/v2/tools/html/index.html#/noticeListViewMore">公告栏列表</a></li>
+                <li popedom="3AF"><a href="/v2/tools/html/index.html#/letterTemplate">打印空介绍信</a></li>
+                <li popedom="47A"><a href="/v2/tools/html/index.html#/partyMonitor">党建监控大盘</a></li>
+                <!--<li><a href="/v2/tools/html/index.html#/import">旗帜数据导入</a></li>
+                <li><a href="/v2/tools/html/index.html#/loadingTips">页面载入配置</a></li>-->
+            </ul>
+        </dd>
+    </dl>
+    <div class="btns">
+        <a href="javascript:;" class="btn" title="折叠/展开菜单"
+            ng-click="$parent.fullmenu=$parent.fullmenu=='fullmenu'?'minmenu':'fullmenu';"
+            onclick="$(this).parents('div.mainmenu').find('dd').attr('style', ''); localStorage.useFullMenu = localStorage.useFullMenu == 'fullmenu' ? 'minmenu' : 'fullmenu'"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+        <a href="/v2/config/html/index.html" class="btn" title="设置"><i class="glyphicon glyphicon-cog"></i></a>
+    </div>
+</div>

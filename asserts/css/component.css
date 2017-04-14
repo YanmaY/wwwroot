@@ -1,0 +1,1538 @@
+* {
+    outline:none !important;
+}
+
+label {
+    font-weight:normal;
+}
+
+treecontrol {
+	-o-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	user-select:none;
+	position: relative;
+	overflow: hidden;
+	display:block;
+}
+treecontrol,
+treecontrol ul,
+treecontrol li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 30px;
+	font-size: 14px;
+	color: #666;
+}
+treecontrol > ul {
+	position: relative;
+	z-index: 1;
+}
+treecontrol > ul > li {
+	display: block;
+}
+treecontrol li.selected {
+	background-color: #E8E8E8 !important;
+}
+treecontrol li.selected ul {
+	background-color: #fff;
+}
+treecontrol li.selected > .tree-label {
+	color: #0273AB;
+}
+treecontrol li.selected > .tree-label span {
+	background-repeat: no-repeat;
+}
+treecontrol li .tree-label {
+	cursor: pointer;
+	/*display: block;*/
+	height:30px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+    white-space:nowrap
+}
+treecontrol li .tree-label.tree-selected {
+	color: #700;
+}
+treecontrol li .tree-label.tree-selected span {
+	background: url(../image/selected.gif) right center no-repeat;
+	padding-right: 20px;
+}
+treecontrol li .tree-label.tree-selected span.icon {
+	background-position: center center;
+}
+treecontrol li .tree-label:hover  {
+	background-color: rgba(230, 230, 230, 0.5); /* 给 .tree-label 的父 li 添加 .hover 效果比这行要好 */
+}
+treecontrol li .tree-leaf-head,
+treecontrol li .tree-branch-head {
+	position: absolute;
+	top: 0;
+	left: -20px;
+	display: block;
+	width: 16px;
+	height: 30px;
+	background: url(../image/tree_close.gif) 0 center no-repeat;
+}
+treecontrol li .tree-leaf-head {
+	background: none;
+	left: 20px;
+	width: 20px;
+	background-repeat: no-repeat;
+	background-position: 2px center;
+    display:none; /* 这个元素引起了一个BUG：点击第一个字时选不中，因为被这个元素挡住了，未找到这个元素的用途所以去掉 */
+}
+treecontrol li.tree-expanded > .tree-branch-head {
+	background: url(../image/tree_open.gif) 0 center no-repeat;
+}
+treecontrol li .tree-branch-head:hover {
+	background-color: #DEDEDE;
+}
+treecontrol li.tree-leaf > .tree-branch-head {
+	display: none;
+}
+treecontrol li ul li ul {
+	display: none;
+}
+treecontrol li.tree-expanded > treeitem > ul {
+	display: block;
+}
+treecontrol ul li,
+treecontrol ul li ul li {
+	position: relative;
+}
+treecontrol li.hover {
+	background-color: #f0f0f0;
+}
+treecontrol li.hover ul {
+	background-color: #fff;
+}
+
+treecontrol ul li {background-position: 20px 6px; }
+treecontrol ul li .tree-branch-head {left: 0em; }
+treecontrol ul li .tree-leaf-head {left: 1.3em; }
+treecontrol ul li .tree-label  {padding-left: 1.3em; }
+treecontrol ul li ul li {background-position: 2.5em 6px; }
+treecontrol ul li ul li .tree-branch-head {left: 1em; }
+treecontrol ul li ul li .tree-leaf-head {left: 2.3em; }
+treecontrol ul li ul li .tree-label  {padding-left: 2.3em; }
+treecontrol ul li ul li ul li {background-position: 3.5em 6px; }
+treecontrol ul li ul li ul li .tree-branch-head {left: 2em; }
+treecontrol ul li ul li ul li .tree-leaf-head {left: 3.3em; }
+treecontrol ul li ul li ul li .tree-label  {padding-left: 3.3em; }
+treecontrol ul li ul li ul li ul li {background-position: 4.5em 6px; }
+treecontrol ul li ul li ul li ul li .tree-branch-head {left: 3em; }
+treecontrol ul li ul li ul li ul li .tree-leaf-head {left: 4.3em; }
+treecontrol ul li ul li ul li ul li .tree-label  {padding-left: 4.3em; }
+treecontrol ul li ul li ul li ul li ul li {background-position: 5.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li .tree-branch-head {left: 4em; }
+treecontrol ul li ul li ul li ul li ul li .tree-leaf-head {left: 5.3em; }
+treecontrol ul li ul li ul li ul li ul li .tree-label  {padding-left: 5.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li {background-position: 6.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 5em; }
+treecontrol ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 6.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 6.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li {background-position: 7.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 6em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 7.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 7.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 8.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 7em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 8.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 8.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 9.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 8em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 9.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 9.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 10.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 9em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 10.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 10.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 11.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 10em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 11.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 11.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 12.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 11em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 12.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 12.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 13.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 12em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 13.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 13.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 14.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 13em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 14.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 14.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 15.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 14em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 15.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 15.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 16.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 15em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 16.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 16.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 17.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 16em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 17.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 17.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 18.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 17em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 18.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 18.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 19.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 18em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 19.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 19.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background-position: 20.5em 6px; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-branch-head {left: 19em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-leaf-head {left: 20.3em; }
+treecontrol ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .tree-label  {padding-left: 20.3em; }
+/* 最多20级 */
+
+.tree-label .icon { /* <span class="icon folder"></span> */
+	display: block;
+	width: 24px;
+	height: 30px;
+	float: left;
+	padding-right: 0;
+	background: none;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.tree-label .icon.org {
+	background-image: url(../image/tree_org.jpg);
+}
+.tree-label .icon.flag {
+	background-image: url(../image/tree_flag.png);
+}
+.tree-label .icon.person {
+	background-image: url(../image/tree_person.png);
+}
+.tree-label .icon.home {
+	background-image: url(../image/tree_home.gif);
+}
+.tree-label .icon.pic {
+	background-image: url(../image/tree_pic.gif);
+}
+.tree-label .icon.trash {
+	background-image: url(../image/tree_trash.gif);
+}
+.tree-label .icon.doc {
+	background-image: url(../image/tree_doc.gif);
+}
+.tree-label .icon.building {
+	background-image: url(../image/tree_building.gif);
+}
+.tree-label .icon.movie {
+	background-image: url(../image/tree_movie.gif);
+}
+.tree-label .icon.email {
+	background-image: url(../image/tree_email.gif);
+}
+.tree-label .icon.file {
+	background-image: url(../image/tree_file.gif);
+}
+.tree-label .icon.folder {
+	background-image: url(../image/tree_folder.gif);
+}
+.tree-label .icon.book {
+	background-image: url(../image/tree_book.jpg);
+}
+/*.popbox .form-control {  //杀伤力太大，原注释为：下拉树的INPUT ，检查了一下应该没用到
+    border-radius:0;
+    border-left:none;
+    border-top:none;
+    border-right:none;
+}*/
+.popbox treecontrol {
+    padding: 5px;
+}
+
+.ui-resizable-helper {
+    border-right:1px dashed #C00;
+    border-bottom:0px;
+    border-top:0px;
+    border-left:0px;
+}
+.ui-resizable {
+    width: 295px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.ui-resizable .ui-resizable-e {
+    background: #F7F7F7 url(../image/resize.gif) center center no-repeat;
+    background-color:rgba(247,247,247,.4);
+    width: 8px;
+    right: -5px;
+}
+.ui-resizable .ui-resizable-e:hover {
+    background-color:#f0f0f0;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 9px;
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #700;
+}
+
+.panel-default .panel-title {
+    line-height:22px;
+    color:#C00;
+    font-size:16px;
+}
+.panel-default .panel-title.noborder {
+    border:none;
+    text-indent:0;
+}
+.panel-default .panel-title a.attr,
+.panel-default .panel-title span.attr {
+    font-size:12px;
+}
+.panel-default .panel-title span.attr {
+    color:#999;
+}
+.panel-default .panel-title a.attr {
+    color:#337ab7;
+}
+.panel-default .panel-title a.attr:hover {
+    color:#23527c;
+    text-decoration:underline;
+}
+.panel-default .panel-title .attr:before {
+    content:"[";
+}
+.panel-default .panel-title .attr:after {
+    content:"]";
+}
+
+.modal-dialog > .modal-content > .panel {
+    margin-bottom:0;
+}
+
+.modal-dialog > .modal-content > .panel > .hasfoot { /* 弹出框有底部按钮栏*/
+    bottom: 40px;
+}
+
+@media (min-width: 992px){
+    .modal-lg {
+	    width: 1000px;
+    }
+}
+
+.modal-dialog > .modal-content > .panel > .panel-foot { /* 弹出框的内容区域超高增加滚动条 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height:40px;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline:none;
+}
+.btn.dropdown-toggle {
+    padding-left:7px;
+    padding-right:7px;
+}
+
+.noRecord {
+    color: #a94442;
+}
+
+.modal-header {
+    padding: 10px 15px;
+    color: #666;
+}
+.modal-title {
+    font-size: 16px;
+}
+.modal-body .tip {
+    padding:30px;
+    text-align:center;
+    font-size: 1.3em;
+}
+.modal-footer {
+    padding: 10px;
+    background-color: #F1F1F1;
+}
+.modal-footer .btn {
+    padding: 3px 12px;
+}
+
+/* 日历 */
+.uib-datepicker .btn {
+    /*padding: 0px 7px;*/
+}
+.uib-datepicker button {
+    border: none;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #eeeeee;
+	border-color: #CCC;
+    color: #a20000;
+}
+.pagination>li>a,
+.pagination>li>span {
+    color:#333;
+    padding: 6px 12px;
+    border-color:#CCC;
+}
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    color:#d40606;
+    border-color: #CCC;
+}
+.pagination:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.form-control {
+    height:auto;
+}
+.form-control:focus {
+    border-color:#CCC;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+tags-input .tags {
+    padding:0;
+    border-color:#CCC;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+tags-input .tags .input {
+    margin:2px;
+    border:none;
+}
+.info-item .value tags-input .tags .input {
+    height:26px;
+    padding: 0 0 0 5px;
+}
+tags-input .tags.focused {
+    box-shadow: none;
+    border:solid 1px #CCC;
+}
+tags-input .autocomplete .suggestion-item em,
+ti-autocomplete-match span {
+    font-size:14px;
+}
+ti-autocomplete-match span {
+    height:24px !important;
+    line-height:24px !important;
+    padding:0 !important;
+}
+tags-input .autocomplete .suggestion-item {
+    padding:5px 15px;
+}
+tags-input .autocomplete .suggestion-item.selected,
+tags-input .autocomplete .suggestion-item.selected em {
+    background-color: #f5f5f5;
+	color: #262626;
+}
+tags-input .tags .tag-item div {
+    display:inline;
+}
+tags-input .tags .tag-item span {
+    height:inherit;
+    line-height:inherit;
+    padding:0;
+    display:inline;
+}
+tags-input .tags .tag-item {
+	background: transparent;
+	border: 1px solid transparent;
+    position:relative;
+    color:#333;
+}
+tags-input .tags .tag-item:after {
+    content:";";
+}
+tags-input .tags .tag-item .remove-button {
+    display:none;
+    color:#000;
+    margin-left:0;
+    text-align:right;
+    line-height:26px;
+    position: absolute;
+    top:0;
+    right:2px;
+    bottom:0;
+    left:0;
+}
+tags-input .tags .tag-item:hover {
+    padding-right:13px;
+    background-color:#f0f0f0;
+}
+tags-input .tags .tag-item:hover:after {
+    display:none;
+}
+tags-input .tags .tag-item:hover .remove-button {
+    display: block;
+}
+
+
+
+.fullscreen .modal-lg {
+      width:100%;
+      height:100%;
+      margin:0px;
+}
+
+.tab-content {
+	background-color: #fff;
+	padding: 1em;
+	margin-bottom: 1em;
+	border: 1px solid #DDD;
+	border-top: none;
+}
+
+.navbar-brand {
+    height:auto;
+}
+.nav>li>a {
+    padding: 5px 10px;
+    font-size:14px;
+}
+
+table.table-network th {
+    border-right:none !important;
+    text-align:right;
+    font-weight:normal;
+}
+/*table.table-network th:after {
+    content:"：";
+}*/
+table.table-network td {
+    border-left: none !important;
+    text-align:left;
+}
+table.table-network .center {
+    text-align:center;
+    vertical-align:middle;
+}
+table.text-center,
+table.text-center th,
+table.text-center td {
+    text-align:center;
+}
+
+/* 党统字段样式类 */
+.party-report:first-child:before{
+    content:" ";
+    color:#C00 !important;
+    padding-left:16px !important;
+    background:url(/v2/image/party-report.gif) left center no-repeat !important;
+}
+.control-label, .info-item .title{
+    border-bottom: 1px solid #fff;
+}
+.control-label, .info-item .data-validate-err{
+    color:#C00;   
+    border-bottom: 1px solid #c00;
+}
+.control-label, .info-item .data-validate-err:hover{
+    color:#C00;   
+    border-bottom: 1px solid #fff;
+}
+.data-validate-err{
+    color:#C00;   
+    border-bottom: 1px solid #c00;
+    position:relative;
+    font-size:14px;
+}
+.data-validate-err:hover{
+    background-color:rgba(255, 0, 0, 0.2);
+}
+.data-validate-err .tooltip {
+    opacity: 0.8;
+    display:none;
+}
+.data-validate-err:hover .tooltip {
+    display:block;
+}
+.data-validate-err .tooltip .tooltip-arrow {
+    border-top-color: #c00;
+    top:auto;
+}
+.data-validate-err .tooltip .tooltip-inner{
+    background:#c00;
+    text-align:left;
+}
+.stepProgress,
+.stepProgress * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.stepProgress {
+	margin: 0 50px;
+	padding: 10px 0;
+	height: 105px;
+}
+.stepProgress .progessText {
+	position: relative;
+	text-align: center;
+	margin: 0;
+}
+.stepProgress .progessText li {
+	list-style: none;
+	position: absolute;
+	bottom: -40px;
+	width: 120px;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	background-color: #F5F5F5;
+	padding: 10px 10px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.stepProgress .progessText li:before,
+.stepProgress .progessText li:after {
+	content: "";
+	position: absolute;
+	bottom: -13px;
+	left: 52px;
+	height: 0;
+	width: 0;
+	border: 6px solid #CCC;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}
+.stepProgress .progessText li.show {
+	display: block !important;
+	z-index: 11;
+}
+.stepProgress .progessText li span {
+	display: block;
+}
+.stepProgress .progessText li.begin,
+.stepProgress .progessText li.end,
+.stepProgress .progessText li.step {
+}
+.stepProgress .progessBar {
+	position: relative;
+}
+.stepProgress .progessBar .barProcess,
+.stepProgress .progessBar .barBg {
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		top: 60px;
+		height: 4px;
+		background-color: #CCC;
+}
+.stepProgress .progessBar .dot {
+	position: absolute;
+	top: 50px;
+	display: block;
+	width: 28px;
+	height: 24px;
+	background-color: #FFF;
+	border-radius: 50%;
+	border: 2px solid #CCC;
+	color: #CCC;
+	cursor: default;
+	z-index: 1;
+}
+.stepProgress .progessBar .dot span {
+	font-size: 14px;
+	display: block;
+	line-height: 20px;
+	text-align: center;
+	font-family: "Arial","Microsoft Yahei";
+	font-weight: bold;
+	cursor: pointer;
+}
+.stepProgress .progessBar .dot.begin span,
+.stepProgress .progessBar .dot.end   span {
+	font-size: 12px;
+}
+.stepProgress.belowText .progessBar .dot {
+    bottom:initial;
+    top:0;
+}
+.stepProgress.belowText .progessBar .barProcess,
+.stepProgress.belowText .progessBar .barBg {
+    top:10px;
+}
+.stepProgress.belowText .progessText li {
+    top:35px;
+    bottom:initial;
+}
+.stepProgress.belowText .progessText li:after {
+    top:-13px;
+    bottom:initial;
+}
+.stepProgress.belowText .progessText li:before {
+    top:-12px;
+    bottom:initial;
+    z-index:11;
+}
+/* 色调请修改以下内容 */
+.stepProgress .progessBar .barProcess {
+	background-color: #C00;
+}
+.stepProgress .progessBar .dot.active {
+	border-color: #C00;
+	color: #FFF;
+	background-color: #C00;
+}
+.stepProgress .progessText li.active {
+	background-color: #fff3f3;
+	border-color: #C00;
+	color: #C00;
+}
+.stepProgress .progessText li.active:before {
+    border-top-color: #fff3f3;
+}
+.stepProgress .progessText li.active:after {
+	border-top-color: #C00;
+}
+.stepProgress .progessText li.current {
+	display: block !important;
+}
+.stepProgress.belowText .progessText li:before {
+    border-bottom-color: #FFF;
+    border-top-color: transparent;
+}
+.stepProgress.belowText .progessText li:after {
+    border-bottom-color: #CCC;
+    border-top-color: transparent;
+}
+.stepProgress.belowText .progessText li.active:after {
+	border-bottom-color: #C00;
+}
+.stepProgress.belowText .progessText li.active:before {
+    border-bottom-color: #fff3f3;
+}
+/* 色调请修改以上内容 */
+
+/*
+.btn-default {
+    border-color:#C00;
+    color:#C00;
+}
+.btn-default:hover {
+	color: #A00;
+	background-color: #FFF;
+	border-color: #E00;
+}
+.btn-default.focus.active,
+.btn-default:focus:active,
+.btn-default.focus,
+.btn-default:focus,
+.btn-default.active,
+.btn-default:active {
+	color: #FFF;
+	background-color: #C00;
+	border-color: #A00;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+*/
+
+.require-sign { /* 必填字段名称后边的星号 */
+    color:#F00;
+}
+tags-input.ng-valid.ng-dirty,
+select.ng-valid.ng-dirty,
+input.ng-valid.ng-dirty,
+textarea.ng-valid.ng-dirty {
+    border-color:#090;
+}
+tags-input.ng-pristine.ng-invalid-required,
+select.ng-pristine.ng-invalid-required,
+input.ng-pristine.ng-invalid-required,
+textarea.ng-pristine.ng-invalid-required {
+    border-bottom-color:#C00;
+}
+tags-input.ng-invalid.ng-dirty,
+select.ng-invalid.ng-dirty,
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-dirty {
+    border-color:#C00;
+    background-color:#ffe4e4;
+}
+
+/* table行特效 */
+table.table-logdata>tbody>tr:hover {
+	background-color: #f2dede;
+    color:#a94442;
+}
+table.table-logdata dl.ext-info {
+    position:absolute;
+    top:36px;
+    right:-1px;
+    z-index:11;
+    margin-bottom:0;
+    background-color: rgba(242, 222, 222, 0.7);
+}
+table.table-logdata dl.ext-info dd {
+    padding-left:2em;
+    padding-bottom:10px;
+}
+
+input[dictionary-tree],
+input[dictionary-list] {
+    background:url(/v2/image/select_corner.gif) right center no-repeat;
+}
+
+.titleTip {
+    position: absolute;
+	z-index: 2147483647;
+	max-width: 250px;
+	word-wrap: break-word;
+	background: #fffafa;
+    background-color:rgba(255, 238, 238, 0.9);;
+	text-align: left;
+	padding: 5px 10px;
+	min-height: 1em;
+	border-radius: 3px;
+	border: solid 1px #f9dfdf;
+	box-shadow: 0px 1px 1px #ffffff;
+	color: #C00;
+	text-shadow: 0px 0px 1px #fff;
+	font-size: 14px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: inline-block;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+    vertical-align: middle;
+    background: transparent url(../image/form_controls.png) 0px 0px no-repeat;
+	-webkit-appearance: none;
+	width: 22px;
+	height: 24px;
+	overflow: visible;
+	cursor: pointer;
+}
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
+	-webkit-appearance: none;
+	content: ':)';
+	text-indent: -9999px;
+	background: url(../image/form_controls.png) 0px -60px no-repeat;
+	width: 15px;
+	height: 14px;
+	top: 2px;
+	left: 4px;
+	position: absolute;
+	display: block;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input[type="checkbox"]:hover {
+	background-position: -36px 0px;
+}
+input[type="checkbox"]:active {
+	background-position: -77px 0px;
+}
+input[type="checkbox"]:focus {
+    outline:none !important;
+}
+input[type="radio"] {
+    background-position:0 -28px
+}
+input[type="radio"]:hover {
+	background-position: -37px -28px;
+}
+input[type="radio"]:checked {
+    background-position:-77px -29px;
+}
+input[type="radio"]:checked:active {
+	background-position: 0px -28px;
+}
+input[type="radio"]:checked::before {
+    background-position:-1px -89px;
+}
+input[type="radio"]:active {
+	background-position: -77px -29px;
+}
+input[type="radio"]:focus {
+    outline:none !important;
+}
+
+input[type="checkbox"].switch {
+    background:none;
+	-webkit-appearance: none;
+	        appearance: none;
+	position: relative;
+	width: 46px;
+	height: 26px;
+	border: 1px solid #DFDFDF;
+	outline: 0;
+	border-radius: 13px;
+	box-sizing: border-box;
+	background-color: #DFDFDF;
+	-webkit-transition: background-color 0.1s, border 0.1s;
+	transition: background-color 0.1s, border 0.1s;
+}
+input[type="checkbox"].switch:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 44px;
+	height: 24px;
+	border-radius: 12px;
+	background-color: #FDFDFD;
+	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+input[type="checkbox"].switch:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 24px;
+	border-radius: 15px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+input[type="checkbox"].switch:checked {
+	border-color: #04BE02;
+	background-color: #04BE02;
+}
+input[type="checkbox"].switch:checked:before {
+	-webkit-transform: scale(0);
+	        transform: scale(0);
+}
+input[type="checkbox"].switch:checked:after {
+	-webkit-transform: translateX(20px);
+	        transform: translateX(20px);
+}
+
+
+.dropdown-menu *,
+.dropdown-menu {
+    outline:none;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius:0;
+}
+.alert-info {
+	color: #ce4949;
+	background-color: #fffdfd;
+	border-color: #ffecec;
+}
+
+.item.thumbnail {
+    position:relative;
+}
+.file-type-icon {
+    position:absolute;
+    right:10px;
+    top:-10px;
+    display:inline-block;
+    width:40px;
+    height:50px;
+    line-height:50px;
+    color:#FFF;
+    font-size:12px;
+    background:#CCC;
+    background:-webkit-gradient(linear, left top, right bottom, from(#d6d6d6), to(#CCC));
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-align:center;
+    text-shadow:0px 5px 20px #000;
+}
+.file-type-icon:before {
+    content:"";
+    display:block;
+    position:absolute;
+    right:0;
+    top:0;
+    border:solid 5px #EEE;
+    border-top-color:#FFF !important;
+    border-right-color:#FFF !important;
+}
+.file-type-icon.mp3{background-color:#017AC1;background:-webkit-gradient(linear, left top, right bottom, from(#00AAE5), to(#017AC1));}
+.file-type-icon.mp3:before {border-color:#00AAE5;}
+.file-type-icon.mp4 {background-color:#B61313;background:-webkit-gradient(linear, left top, right bottom, from(#D95929), to(#B61313));}
+.file-type-icon.mp4:before {border-color:#D95929;}
+.file-type-icon.docx,
+.file-type-icon.doc{background-color:#5B75B7;background:-webkit-gradient(linear, left top, right bottom, from(#7f96d2), to(#5B75B7));}
+.file-type-icon.docx:before,
+.file-type-icon.doc:before {border-color:#7f96d2;}
+.file-type-icon.xlsx,
+.file-type-icon.xls{background-color:#508B37;background:-webkit-gradient(linear, left top, right bottom, from(#7bbb60), to(#508B37));}
+.file-type-icon.xlsx:before,
+.file-type-icon.xls:before {border-color:#7bbb60;}
+.file-type-icon.pptx,
+.file-type-icon.ppt{background-color:#D8380D;background:-webkit-gradient(linear, left top, right bottom, from(#FA8140), to(#D8380D));}
+.file-type-icon.pptx:before,
+.file-type-icon.ppt:before {border-color:#FA8140;}
+.file-type-icon.txt{background-color:#3A4757;background:-webkit-gradient(linear, left top, right bottom, from(#5F7693), to(#3A4757));}
+.file-type-icon.txt:before {border-color:#5F7693;}
+.file-type-icon.jpg{background-color:#0C3F95;background:-webkit-gradient(linear, left top, right bottom, from(#427ACC), to(#0C3F95));}
+.file-type-icon.jpg:before {border-color:#427ACC;}
+.file-type-icon.png{background-color:#0C3F95;background:-webkit-gradient(linear, left top, right bottom, from(#427ACC), to(#0C3F95));}
+.file-type-icon.png:before {border-color:#427ACC;}
+.file-type-icon.gif{background-color:#0C3F95;background:-webkit-gradient(linear, left top, right bottom, from(#427ACC), to(#0C3F95));}
+.file-type-icon.gif:before {border-color:#427ACC;}
+
+.angucomplete-dropdown {
+    padding:0;
+    max-height:400px;
+    overflow:auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    border-color: #CCC;
+}
+.angucomplete-row {
+    padding: 6px 10px;
+	color: #000000;
+	margin-bottom: 0;
+	border-top: solid 1px #ececec;
+	margin-top: -1px;
+	line-height: 140%;
+}
+.angucomplete-title {
+    font-size:12px;
+}
+.angucomplete-description {
+    color:#AAA;
+    font-size:12px;
+}
+.angucomplete-selected-row,
+.angucomplete-row:hover {
+    background-color: #f7f7f7;
+	color: #000;
+}
+input.autocomplete,
+.angucomplete-holder input {
+    background:url(/v2/image/angucomplete.gif) right center no-repeat;
+}
+.angucomplete-searching {
+    padding:10px;
+}
+
+[uib-datepicker-popup],
+.form-control-datetimepicker {
+    background:url(/v2/image/datePicker.gif) right center no-repeat;
+}
+
+.organization-tree-box {
+    position:relative;
+    padding-bottom:30px;
+    margin:0;
+    background:#f0f0f0;
+}
+.organization-tree-box dt {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:1px;
+    border-top:solid 1px #CCC;
+    height:30px;
+    line-height:30px;
+    z-index:11;
+}
+.organization-tree-box dt a {
+    float:left;
+    display:block;
+    padding:0 0.5em;
+    border-right:solid 1px #CCC;
+    font-weight:normal;
+    color:#333;
+}
+.organization-tree-box dt a.selected {
+    background:#fdfdfd;
+    position:relative;
+    top:-1px;
+}
+.organization-tree-box dt a.clear {
+    float:right;
+    border-right:none;
+}
+.organization-tree-box dt a.clear:hover {
+    color:#C00;
+}
+.organization-tree-box dd {
+    background:#fdfdfd;
+    padding:5px;
+}
+.organization-tree-box input[type="text"] ,
+.organization-tree-box input[type="text"]:focus {
+    margin:0;
+    border:solid 1px #CCC;
+    border-radius: 3px;
+    width:100%;
+}
+.organization-tree-box dd .list {
+    margin: 10px 0;
+    border:solid 1px #CCC;
+}
+.organization-tree-box dd treecontrol,
+.organization-tree-box dd .list-group {
+    border:none;
+    position:relative;
+	font-size: 12px;
+	max-height: 400px;
+	overflow-y: scroll;
+    background:#FFF;
+}
+.organization-tree-box dd .list-group:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+.organization-tree-box dd .list-group .list-group-item {
+    padding:10px;
+    border-left:none;
+    border-right:none;
+}
+.organization-tree-box dd .list-group .list-group-item:first-child {
+    border-top:none;
+}
+.organization-tree-box dd .list-group .list-group-item:last-child {
+    border-bottom:0;
+}
+.organization-tree-box dd .list-group .list-group-item-title {
+    font-size:14px;
+    color:#000;
+}
+.organization-tree-box dd .list-group .list-group-item-title .tag {
+    float: right;
+	color: #666;
+	background: #EEE;
+	padding: 0 5px;
+	border-radius: 3px;
+}
+.organization-tree-box dd .list-group .list-group-item-intro {
+    color:#999;
+}
+.organization-tree-box dd .list-group,
+.organization-tree-box dd .alert {
+    margin-bottom:0;
+}
+
+.panel-footer .pagination  {
+    margin:0;
+}
+
+.message-box {
+    position:absolute;
+    position:fixed;
+    width:40%;
+    right:-40%;
+    top:0;
+    bottom:0;
+    background:#FFF;
+    z-index:1010; /* $modal:1050, ueditor:1000 */
+    border-left:solid 1px #C00;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    display:flex;
+}
+.message-box > .panel {
+    flex:1;
+    margin-bottom:0;
+}
+    .message-box > .panel > .panel-heading {
+        padding:14px;
+    }
+.message-box > .panel .main {
+    position:absolute;
+    right:0;
+    bottom:55px;
+    left:0;
+    top:52px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.message-box > .panel .main .form-control {
+    width:100%;
+}
+.message-box > .panel .panel-footer {
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    height:55px;
+    padding:12px 15px;
+}
+.message-box > .panel .main .list-group {
+    margin-bottom:0;
+}
+.message-box > .panel .main .list-group-item .title {
+    font-size:14px;
+}
+.message-box > .panel .main .list-group-item.unread .title {
+    font-weight:bold;
+}
+.message-box > .panel .main .list-group-item .attr {
+    color:#999;
+    font-size:12px;
+}
+.message-box > .panel.outbox .list-group-item .attr .date {
+    float:right;
+}
+.message-box > .panel .detial {
+    position:absolute;
+    width:100%;
+    left:100%;
+    top:0;
+    bottom:0;
+    background:#FFF;
+    padding:10px;
+    border-left:solid 1px #CCC;
+    border-right:solid 1px #CCC;
+    background:#f7f7f7;
+    z-index:11;
+}
+.message-box > .panel .detial a.back {
+    position:fixed;
+    right:0;
+    top:0;
+    width:43px;
+    height:43px;
+    display:block;
+    display:none;
+}
+.message-box > .panel .detial .summary {
+    color:#999;
+    font-size:12px;
+}
+.message-box > .panel .detial .sender {
+    color:#000;
+}
+.message-box > .panel .detial .sender.system {
+    color:#c00;
+}
+.message-box > .panel .detial .summary .recipient {
+    color:#000;
+}
+.message-box > .panel .detial .summary .recipient:after {
+    content:"、";
+    color:#999;
+}
+    .message-box > .panel .detial .summary .recipientList {
+    }
+.message-box > .panel.send .datepicker {
+    position:absolute;
+    bottom:54px;
+    left:45px;
+    background:#FFF;
+    border:solid 1px #CCC;
+    padding:15px;
+    width:200px;
+    z-index:2000; /* ueditor: 2000 */
+}
+.message-box > .panel.send .datepicker:before,
+.message-box > .panel.send .datepicker:after {
+    content:"";
+    position:absolute;
+    left:45px;
+    bottom:-21px;
+    border:solid 10px #CCC;
+    width:0;
+    height:0;
+    display:block;
+    border-right-color:transparent;
+    border-left-color:transparent;
+    border-bottom-color:transparent;
+}
+.message-box > .panel.send .datepicker:after {
+    bottom:-20px;
+    border-top-color:#FFF;
+}
+.message-box > .panel.contacts .panel-heading:after {
+    display:none;
+}
+.message-box > .panel.contacts .panel-body.main {
+    display:flex;
+}
+.message-box > .panel.contacts h3.group-name {
+    margin:10px 0;
+    font-size:16px;
+    font-weight:normal;
+}
+.message-box > .panel.contacts .group-list,
+.message-box > .panel.contacts .user-list {
+    background-color:#f9f9f9;
+    position:relative;
+}
+.message-box > .panel.contacts .group-list .data-list,
+.message-box > .panel.contacts .user-list  .data-list {
+    position:absolute;
+    left:0;
+    top:44px;
+    right:0;
+    bottom:0;
+    overflow-y:auto;
+    padding:15px;
+}
+.message-box > .panel.contacts .group-list {
+    width:220px;
+    margin-bottom:0;
+    font-size:12px;
+}
+.message-box > .panel.contacts .group-list .list-group-item {
+    position:relative;
+}
+.message-box > .panel.contacts .group-list .list-group-item-form-control {
+    padding:6px 0;
+}
+.message-box > .panel.contacts .group-list .list-group-item .btn-group {
+    display:none;
+    position:absolute;
+    right:10px;
+    top:10px;
+    opacity:.8;
+}
+.message-box > .panel.contacts .group-list .list-group-item .btn-group:hover {
+    opacity:1;
+}
+.message-box > .panel.contacts .group-list .list-group-item:hover .btn-group {
+    display:inline-block;
+}
+.message-box > .panel.contacts .user-list {
+    flex:1;
+    margin-right:15px;
+    margin-bottom:0;
+    background:#FFF;
+}
+.message-box > .panel.contacts .user-list .data-list {
+    padding:0;
+}
+.message-box > .panel.contacts .user-list .data-list table {
+    margin-bottom: 0;
+    font-size:12px;
+}
+.message-box > .panel.contacts .user-list .user-name {
+    font-size:14px;
+}
+.message-box > .panel.contacts .user-list .organization-name {
+    color:#999;
+    display:block;
+    font-size:12px;
+}
+.message-box .pagination>li>a,
+.message-box .pagination>li>span {
+    padding:3px 12px;
+}
+.message-box > .panel.contacts .search {
+    width: 150px;
+    float: right;
+    margin-left: 10px;
+}
+.message-box > .panel .btn-group {
+    margin-left: 10px;
+}
+.message-box .messageContent {
+    padding: 1em 2em;
+    font-size:16px;
+    line-height: 180%;
+    margin-bottom:20px;
+    background:#FFF;
+    min-height:300px;
+    word-break:break-all;
+}
+.message-box .messageContent div,
+.message-box .messageContent p {
+    text-indent:2em;
+    margin:10px 0;
+    font-size:16px;
+    line-height: 180%;
+}
+.message-box .messageContent div img,
+.message-box .messageContent p img {
+    max-width: 90%;
+}
+.message-box .inbox {
+    background-color: #f5f5f5;
+}
+.message-box .inbox .tab-content {
+	margin-bottom: 0;
+	position: absolute;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	top: 47px;
+    overflow-y: auto;
+	overflow-x: hidden;
+}
+.message-box .inbox .tab-content .list-group-item .view-status {
+    float:left;
+    font-size:26px;
+    margin-right:15px;
+    color:#999;
+}
+.message-box .inbox .tab-content .list-group-item .view-status.unread {
+    color:#FF9800;
+}
+.message-box .inbox .tab-content .list-group-item .view-status.unread:hover {
+    color:#ff5722;
+}
+.message-box .inbox .tab-content .list-group-item a {
+    display:block;
+}
+.message-box .inbox .tab-content .list-group-item:hover,
+.message-box .inbox .tab-content .list-group-item:focus {
+	color: #555;
+	text-decoration: none;
+	background-color: #f5f5f5;
+}
+.message-box .inbox .btn-group-xs .dropdown-menu {
+    min-width:109px;
+}
+.message-box .inbox .search.input-group {
+    width:110px;
+    margin-left:10px;
+    float:right;
+}
+.message-box .nav-tabs > li .badge {
+	font-weight: normal;
+    background-color:#C00;
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .input-group-addon,
+.input-group-xs > .input-group-btn > .btn {
+    height: 22px;
+	padding: 0px 5px;
+	font-size: 12px;
+	line-height: 1;
+	border-radius: 3px;
+}
+
+.input-group tags-input .host {
+    margin:0;
+}
+.input-group tags-input .tags {
+    border-color:transparent;
+    box-shadow:none;
+}
+.input-group tags-input.ng-invalid .tags {
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+}
+
+.btn-group-xs .dropdown-menu {
+    font-size: 12px;
+}
+.btn-group-xs .dropdown-menu > li > a {
+    padding: 5px 15px;
+}
+.btn-group-xs .dropdown-menu .divider {
+    margin:5px 0;
+}
+
+
+.compel .messageContent {
+    padding: 1em 2em;
+    font-size:16px;
+    line-height: 180%;
+    margin-bottom:20px;
+    background:#FFF;
+    min-height:300px;
+    word-break:break-all;
+}
+.compel .messageContent div,
+.compel .messageContent p {
+    text-indent:2em;
+    margin:10px 0;
+    font-size:16px;
+    line-height: 180%;
+}
+.compel .messageContent div img,
+.compel .messageContent p img {
+    max-width: 90%;
+}
+.compel .detial .summary {
+    color:#999;
+    font-size:12px;
+}
+.compel .detial .sender {
+    color:#000;
+}
+.compel .detial .sender.system {
+    color:#c00;
+}
+.compel .detial .summary .recipient {
+    color:#000;
+}
+.compel .detial .summary .recipient:after {
+    content:"、";
+    color:#999;
+}
+.compel .detial .summary .recipientList {
+}
+
+.sort-asc:after{
+    content:" ";
+    padding-right:14px !important;    
+    background:url(/v2/image/datagrid_icons.png) no-repeat 0px center !important;
+}
+.sort-desc:after{
+    content:" ";
+    padding-right:14px !important;    
+    background:url(/v2/image/datagrid_icons.png) no-repeat -16px center !important;
+}
+
+
+.preview
+{
+    padding:0 0 0 0 !important;
+}
+
+.preview iframe
+{
+    margin:0 0 0 0;
+    padding:0 0 0 0 !important;
+    border:none;
+    width:100%;
+    min-height:600px;
+    text-align:center;
+}
+
+.avatar_{width:80px;height:80px;border-radius:50%;margin-top:15px;opacity:1;filter:alpha(opacity=100);transition:all 0.3s ease-in 0s;}
+.user:hover .avatar_{border-radius:0;transition:all 0.3s ease-in 0s;opacity:.8;filter:alpha(opacity=80);}
+.content-reply-box{width:100%;overflow:hidden;padding: 20px 40px;} 
+.content-reply-box li{width:100%;overflow:hidden;margin-bottom:2em;}
+.content-reply-box li.send .user{float:left;margin-right:10px;}
+.content-reply-box li.recv .user{float:right;margin-left:10px;}
+.content-reply-box li.send .reply-content-box{margin-left:90px;margin-top:20px;}
+.content-reply-box li.recv .reply-content-box{margin-right:90px;margin-top:20px;}
+.user-name{color:#999;margin-top:5px;display:block;text-align:center;width:80px;white-space:nowrap;text-overflow:ellipsis;}
+.reply-time{color:#e1912d;font-size:.85em;display:inline-block;width:100%;}
+.content-reply-box li.send .reply-time{text-align:left;}
+.content-reply-box li.recv .reply-time{text-align:right;}
+.content-reply-box li.send .reply-content{max-width:50%;border:1px solid #ccc;padding:.6em;background-color:#ccc;border-radius:4px;box-shadow:0 0 5px #bbb;margin-top:5px;display:inline-block;}
+.content-reply-box li.recv .reply-content{float:right;max-width:50%;border:1px solid #7bb;padding:.6em;background-color:#7bbb60;border-radius:4px;box-shadow:0 0 5px #bbb;}
+.content-reply-box li.send .arrow{width:0;height:0;line-height:0;font-size:0;border-color:transparent #ccc transparent transparent;border-width:6px;border-style:dashed solid dashed dashed;display:block;position:absolute;top:8px;left:-12px;z-index:999;}
+.content-reply-box li.recv .arrow{width:0;height:0;line-height:0;font-size:0;border-color:transparent transparent transparent #7bbb60;border-width:6px;border-style:dashed dashed dashed solid;display:block;position:absolute;top:8px;right:-12px;z-index:999;}
+.mg10 {margin:10px 0;}
+.pr{position:relative;}
+

@@ -1,0 +1,146 @@
+
+
+/*滚动条样式
+----------------开始*/
+::-webkit-scrollbar
+{
+    width: 16px;
+    height: 16px;
+}
+::-webkit-scrollbar:hover -webkit-scrollbar-button:vertical:start
+{
+    background: url(scrollbtnhover.gif) no-repeat -21px 1px,url(scroll-verbg.png);
+}
+
+::-webkit-scrollbar:hover -webkit-scrollbar-button:vertical:end
+{
+    background: url(scrollbtnhover.gif) no-repeat 2px 0px,url(scroll-verbg.png);
+}
+
+::-webkit-scrollbar:hover -webkit-scrollbar-button:horizontal:start
+{
+    background: url(scrollbtnhover.gif) no-repeat 1px -21px,url(scroll-horbg.png);
+}
+
+
+/*::-webkit-scrollbar:hover -webkit-scrollbar-button:horizontal:end
+{
+	background: url(scrollbtnhover.gif) no-repeat -23px -21px,url(scroll-horbg.png);
+}
+*/
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment
+{
+    display: block;
+    /*display: none;	*/
+}
+
+::-webkit-scrollbar-track-piece:vertical
+{
+    /*background-color: #CCCCCC;*/
+    background: url(scroll-verbg.png) -18px 0 repeat-y , url(scroll-verbg.png) 0px 0px , url(scroll-verbg.png) 100% 0  no-repeat;
+    /*-webkit-border-image: url(scroll-verbg.png) 7 8 stretch;*/
+}
+
+
+::-webkit-scrollbar-track-piece:horizontal
+{
+    background-color: #CCCCCC;
+    /*background: url(scroll-horbg.png);*/
+    background: url(scroll-horbg.png) 0px -18px repeat-x
+}
+
+::-webkit-scrollbar-thumb:vertical
+{
+    -webkit-border-image: url(scrollverbgborder.png) 3 stretch;
+    -moz-border-image: url(scrollverbgborder.png) 3 stretch;
+    background: url(scrollverbg-mid1.png) no-repeat 0px 50%,url(scrollverbg-all.png);
+    border-width: 3px;
+}
+::-webkit-scrollbar-thumb:vertical:hover
+{
+    -webkit-border-image: url(scrollverbgborderhover.png) 3 stretch;
+    -moz-border-image: url(scrollverbgborderhover.png) 3 stretch;
+    background: url(scrollverbg-mid.png) no-repeat 0px 50%,url(scrollverbg-all.png);
+    border-width: 3px;
+}
+::-webkit-scrollbar-thumb:horizontal
+{
+    -webkit-border-image: url(scrollhorbgborder.png) 3 stretch;
+    -moz-border-image: url(scrollhorbgborder.png) 3 stretch;
+    background: url(scrollhorbg-mid1.png) no-repeat 50% 0px,url(scrollhorbg-all.png);
+    border-width: 3px;
+}
+::-webkit-scrollbar-thumb:horizontal:hover
+{
+    -webkit-border-image: url(scrollhorbgborderhover.png) 3 stretch;
+    -moz-border-image: url(scrollhorbgborderhover.png) 3 stretch;
+    background: url(scrollhorbg-mid.png) no-repeat 50% 0px,url(scrollhorbg-all.png);
+    border-width: 3px;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    /*background-color:#9f9f9f;  -webkit-border-radius:4px;*/
+}
+/*-------------------滚动条按钮--------------------*/
+::-webkit-scrollbar-button:horizontal
+{
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-button:vertical
+{
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-button:vertical:start
+{
+    background:url(scroll-verbg.png);/* url(scrollbtn.png) no-repeat -21px 1px,*/
+}
+
+::-webkit-scrollbar-button:vertical:end
+{
+    background: url(scroll-verbg.png) -36px -6px;/*url(scrollbtn.png) no-repeat 2px 0px,*/
+}
+
+::-webkit-scrollbar-button:horizontal:start
+{
+    background:url(scroll-horbg.png) 0 -36px; /*url(scrollbtn.png) no-repeat 1px -21px,*/
+}
+
+::-webkit-scrollbar-button:horizontal:end
+{
+    background: url(scroll-horbg.png) -6px 0;/*url(scrollbtn.png) no-repeat -23px -21px,*/
+}
+
+/*::-webkit-scrollbar-button:vertical:start:active,::-webkit-scrollbar-button:vertical:start:hover
+{
+	background: url(scrollbtnhover.gif) no-repeat -21px 1px,url(scroll-verbg.png);
+}
+
+::-webkit-scrollbar-button:vertical:end:active,::-webkit-scrollbar-button:vertical:end:hover
+{
+	background: url(scrollbtnhover.gif) no-repeat 2px 0px,url(scroll-verbg.png);
+}
+
+::-webkit-scrollbar-button:horizontal:start:active,::-webkit-scrollbar-button:horizontal:start:hover
+{
+	background: url(scrollbtnhover.gif) no-repeat 1px -21px,url(scroll-horbg.png);
+}
+
+::-webkit-scrollbar-button:horizontal:end:active,::-webkit-scrollbar-button:horizontal:end:hover
+{
+	background: url(scrollbtnhover.gif) no-repeat -23px -21px,url(scroll-horbg.png);
+}*/
+/*------------------右下角-----------------------*/
+::-webkit-scrollbar-corner
+{
+    background: url(conner.gif);
+    background: #f1f3f4;
+    border-top:#c2c6d2 1px solid;
+    border-left:#c2c6d2 1px solid;
+}
+/*滚动条样---------------结束*/
+

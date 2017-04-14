@@ -1,0 +1,79 @@
+<div id="logo">
+    <img src="/v2/image/logo.png" alt="河洛党建服务平台LOGO" height="48" />
+    河洛党建服务平台
+</div>
+<ul id="handler" ng-controller="top_barCtl">
+    <li class="nav dropdown">
+        <a data-toggle="dropdown" class="btn notice dropdown-toggle" href="javascript:;">
+            <i class="glyphicon glyphicon-bell"></i>
+            <span class="badge" ng-if="numberOfUnreadMessages" ng-bind="numberOfUnreadMessages"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="btn-change">
+            <li>
+                <a inbox="/v2/message/html/tpl_inbox.html" width="45%" href="javascript:;" disabled-href="/v2/message/html/index.html#/msgmailboxlist">
+                    <i class="ion-chatbubble-working"></i>
+                    收件箱
+                    <span class="badge" ng-if="numberOfUnreadMessages" ng-bind="numberOfUnreadMessages"></span>
+                </a>
+            </li>
+            <li>
+                <a outbox="/v2/message/html/tpl_outbox.html" width="45%" href="javascript:;">
+                    <i class="ion-chatbubble-working"></i>
+                    发件箱
+                </a>
+            </li>
+            <li>
+                <a drafts="/v2/message/html/tpl_drafts.html" width="45%" href="javascript:;">
+                    <i class="ion-chatbubble-working"></i>
+                    草稿箱
+                </a>
+            </li>
+            <li>
+                <a send="/v2/message/html/tpl_send.html" message="{}" width="45%" href="javascript:;" disabled-href="/v2/message/html/index.html#/msgmailbox">
+                    <i class="ion-compose"></i>
+                    发消息
+                </a>
+            </li>
+            <li>
+                <a contacts="/v2/message/html/tpl_contacts.html" message="{}" width="1000px" href="javascript:;" disabled-href="/v2/message/html/index.html#/msggrouplist">
+                    <i class="ion-person-stalker"></i>
+                    通讯录
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav">
+        <a href="/v2/help/html/index.html" target="_blank" class="btn btn-default">帮助手册</a>
+    </li>
+    <li class="nav dropdown usertypes" ng-show="userInfo.UserTypes.length>1">
+        <a id="btn-change" href="javascript:void(0);" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            <span class="name_tthn">切换身份</span>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="btn-change">
+            <li ng-mouseover="$parent.hover=$index" ng-repeat="type in userInfo.UserTypes" ng-class="{true:'active',false:''}[type.Current]">
+                <span ng-show="$parent.hover==$index&&userInfo.DefaultUserTypeId!=type.TypeID"
+                        ng-click="setDefaultUserType(type.TypeID)"
+                        class="setDefault pull-right pointer">设为默认</span>
+                <span ng-show="userInfo.DefaultUserTypeId==type.TypeID"
+                        class="setDefault pull-right pointer">默认</span>
+                <a href="{{type.HomeUrl}}" target="type_{{type.TypeID}}">
+                    {{type.TypeName}}
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav dropdown">
+        <a id="btn-user" href="javascript:void(0);" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            <span class="name_tthn">{{userName}}</span>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="btn-user">
+            <li><a href="/v2/config/html/index.html#/userinfo"><span class="glyphicon glyphicon-user"></span> 个人资料</a></li>
+            <li><a href="javascript:;"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="javascript:;" ng-click="refreshUserInfo()" data-name="logout"><span class="glyphicon glyphicon-retweet"></span> 刷新登录状态</a></li>
+            <li><a href="javascript:;" ng-click="exit()" data-name="logout"><span class="glyphicon glyphicon-off"></span> 退出登录</a></li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="lib/bs/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="lib/bs/css/ionicons.min.css" rel="stylesheet" />
+    <link href="lib/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet" />
+    <link href="lib/ng-tags-input/ng-tags-input.bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/ng-tags-input/ng-tags-input.min.css" rel="stylesheet" />
+    <link href="asserts/css/component.css" rel="stylesheet" />
+    <link href="asserts/css/style.css" rel="stylesheet" />
+    <link href="asserts/css/index.css" rel="stylesheet" />
+    <script>
+        //下面三行代码的解释请看/v2/subsite/readme.txt
+        var subsite = JSON.parse(window.sessionStorage["subsite"]);
+        if (subsite && subsite.name) {
+            document.write("<link href='subsite/" + subsite.name + "/resources/style.css' rel='stylesheet' />");
+        }
+    </script>
+    <link href="lib/ngchat/angular-chart.css" rel="stylesheet" />
+    <title>干部管理平台</title>
+</head>
+
+<body ng-controller="homeCtl" class="home">
+    <div class="body">
+        <div id="top_bar" class="container-fluid" >
+        </div>
+        <div class="main-container">
+            <ui-view></ui-view>
+        </div>
+    </div>
+</body>
+<!-- build:js js/lib.jquery.min.js -->
+<script src="lib/jquery/jquery-1.11.3.min.js"></script>
+<script src="lib/jquery-ui-1.11.4/jquery-ui.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.angular.min.js -->
+<script src="lib/angular/angular1.5.5.js"></script>
+<script src="lib/angular/angular-locale-zh-cn.js"></script>
+<script src="lib/angular/angular-ui-route.min.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+<script src="lib/angular/angular-animate.js"></script>
+<script src="lib/angular/angular-sanitize.js"></script>
+<script src="lib/angular/angular-cookies.min.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.bootstrap.min.js -->
+<script src="lib/bs/js/bootstrap.min.js"></script>
+<script src="lib/uibootstrap/ui-bootstrap-tpls-1.2.5.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.datetimepicker.min.js -->
+<script src="lib/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="lib/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="lib/bootstrap-datetimepicker/moment-with-locales.min.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.ueditor.min.js -->
+<script src="lib/ueditor/ueditor.config.js"></script>
+<script src="lib/ueditor/ueditor.all.js"></script>
+<script src="lib/ueditor/angular-ueditor.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.chart.min.js -->
+<script src="lib/ngchat/Chart.js"></script> 
+<script src="lib/ngchat/angular-chart.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.tree.min.js -->
+<script src="lib/ngtreecontrol/angular-tree-control.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.flow.min.js -->
+<script src="lib/ng-flow/ng-flow-standalone.js"></script>
+<!-- endbuild -->
+<!-- build:js js/lib.tagsInput.min.js -->
+<script src="lib/ng-tags-input/ng-tags-input.min.js"></script>
+<!-- endbuild -->
+<!-- build:js js/app.min.js -->
+<script src="js/component.js"></script>
+<script src="js/config.js"></script>
+<script src="js/service.js"></script>
+<script src="js/homeCtl.js"></script>
+<!-- endbuild -->
+
+</html>
